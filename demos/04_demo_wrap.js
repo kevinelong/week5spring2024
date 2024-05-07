@@ -7,7 +7,7 @@ person = {} //empty object
 //array
 list = [32, 54, 76]; //define array literal
 list.push(99) //add one more
-
+console.log(list[1]) //54
 //object
 person = {name:"Kevin", age: 56}; //define object literal
 person.color = "black" //add one more
