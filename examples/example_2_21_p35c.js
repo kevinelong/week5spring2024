@@ -8,7 +8,7 @@ let menu = [
 ];
 
 
-function getCategoryItems(menu, category){
+function getCategoryItems(menu, categorySought){
     //get just one category
     let list = [];
 
@@ -16,7 +16,7 @@ function getCategoryItems(menu, category){
     for(let i = 0; i < menu.length; i++){
         const line = menu[i];
         //if is drink
-        if(line.category == category){
+        if(line.category == categorySought){
             //then store
             list.push(line);
         }//end if
@@ -25,5 +25,10 @@ function getCategoryItems(menu, category){
     return list;
 }
 
-const results = getCategoryItems(menu, "Meal");
-console.log(results);
+const sought = "Meal";
+const results = getCategoryItems(menu, sought);
+
+//FOR OF
+for(element of results){ //so short and tidy! no index!
+    console.log(element);
+}
