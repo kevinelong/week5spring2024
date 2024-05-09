@@ -1,0 +1,32 @@
+<head><Style>
+    img{
+        border: 1ppx solid black;
+        width: min(25vw, 25vh);
+        height: min(25vw, 25vh);
+        object-fit: contain;
+    }
+</Style></head>
+<body></body>
+<script>
+
+    const fruit = [
+        {name: "Apple", url:"./apple.jpg"},
+        {name: "Banana", url:"./banana.jpg"},
+        {name: "Cherry", url:"./cherry.jpg"},
+    ];
+
+    const img = document.createElement("img");
+    document.body.appendChild(img);
+
+    //LOOP any kind
+    for(let i = 0; i < fruit.length; i++){ //TRADITIONAL FOR
+        let f = fruit[i];
+    // for(let f of fruit){  // NEWFANGLED FOR OF
+        const buttonElement = document.createElement("button");
+        buttonElement.innerText = f.name;
+        buttonElement.dataset.url = f.url;
+        buttonElement.addEventListener("click", e => img.src = buttonElement.dataset.url);
+        document.body.appendChild(buttonElement);
+    }
+
+</script>
