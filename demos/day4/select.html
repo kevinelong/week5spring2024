@@ -1,0 +1,37 @@
+<body>
+    <select id="menu">
+        <option value="">Default Choice</option>
+        <!-- add more options here -->
+    </select>
+    <select name="output" id="output"></select>
+    <div id="details">?</div>
+</body>
+<script src="./data.js"></script>
+<script>
+    for(cat of cats){ //IMMEDIATE LOOP FOR FIRST SELECT OPTIONS (CATS)
+        const opt = document.createElement("option");
+        opt.value = cat.id;
+        opt.innerText = cat.name;
+        menu.appendChild(opt);
+    } //END INITITAL CAT LOOP
+
+    menu.addEventListener("change", (event)=>{ //CHANGE
+        output.innerHTML = `<option value="">Default Item</option>`; //CLEAR THEM ALL OUT
+        for(item of items){ //LOOP
+            if(menu.value == item.cat){ //FILTER
+                const opt = document.createElement("option");
+                opt.value = item.id;
+                opt.innerText = item.name;
+                output.appendChild(opt); //OUTPUT
+            }
+        }
+    });//END MENU CHANGE
+    
+    output.addEventListener("change", (event)=>{ //CHANGE
+        for(item of items){ //LOOP
+            if(output.value == item.id){ //FILTER
+                details.innerText = "$" + item.price.toFixed(2); //OUTPUT
+            }
+        }
+    });//END OUTPUT CHANGE
+</script>
