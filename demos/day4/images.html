@@ -19,9 +19,9 @@
     document.body.appendChild(img);
 
     //LOOP any kind
-    for(let i = 0; i < fruit.length; i++){ //TRADITIONAL FOR
-        let f = fruit[i];
-    // for(let f of fruit){  // NEWFANGLED FOR OF
+    // for(let i = 0; i < fruit.length; i++){ //TRADITIONAL FOR
+    //     let f = fruit[i];
+    for(let f of fruit){  // NEWFANGLED FOR OF
         const buttonElement = document.createElement("button");
         buttonElement.innerText = f.name;
         buttonElement.dataset.url = f.url;
