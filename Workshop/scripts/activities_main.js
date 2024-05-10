@@ -9,7 +9,7 @@ function option(target, displayName, value) {
 
 function getDetails(a) {
     return `
-        ${a.id}
+        <b> ${a.id} </b>
 
         ${a.description}
 
