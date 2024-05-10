@@ -3,35 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hiking</title>
+    <!-- HIKING -->
+<!-- 0. load the hikes data -->
     <script src="./scripts/hiking.js"></script>
+    <script src="./scripts/hiking_main.js"></script>
 </head>
 <body>
-    <h1>Hiking</h1>
-    <select id="hikesSelect">
+    <select name="hikesElement" id="hikesElement">
         <option value="">Select a Hike</option>
     </select>
     <div id="details">?</div>
-    <img id="scenicImageElement">
-    <img id="trailMapImageElement">
 </body>
-<script>
-for(hike of hikes){
-    hikesSelect.innerHTML += `<option value="${hike.id}">${hike.name}</option>`
-}
-
-const path = "./images/";
-
-hikesSelect.onchange = e =>{
-    for(hike of hikes){
-        if(hike.id == hikesSelect.value){
-            details.innerText = hike.description;
-            trailMapImageElement.src = path + hike.trailMapImage;
-            scenicImageElement.src = path + hike.scenicImage;
-
-            break;
-        }
-    }
-}
-</script>
 </html>
